@@ -2,6 +2,9 @@ name: First Workflow
 
 on:
   workflow_dispatch:
+  issues:
+        types: [opened, reopened]
+
 
 jobs:
   job1: # Job ID
