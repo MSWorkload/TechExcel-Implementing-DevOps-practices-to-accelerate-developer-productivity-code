@@ -20,4 +20,4 @@ jobs:
             scope: resourcegroup
             resourceGroupName: 'rg-app-delete'
             template: './InfrastructureAsCode/main.bicep'
-            parameters: './InfrastructureAsCode/main.parameters.json'
+            # parameters: './InfrastructureAsCode/main.parameters.json'
