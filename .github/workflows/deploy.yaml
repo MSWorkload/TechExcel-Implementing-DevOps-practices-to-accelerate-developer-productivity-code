@@ -19,5 +19,5 @@ jobs:
           with:
             scope: resourcegroup
             resourceGroupName: 'rg-app-delete'
-            template: '../InfrastructureAsCode/main.bicep'
+            template: './InfrastructureAsCode/main.bicep'
             parameters: '<PathToParametersFile>'
