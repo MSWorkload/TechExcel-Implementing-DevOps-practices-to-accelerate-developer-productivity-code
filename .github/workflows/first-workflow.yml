@@ -20,6 +20,7 @@ jobs:
       - name: Cowsays
         uses: mscoutermarsh/cowsays-action@master
         with:
-          text: "Ready for prod–ship it!"
+          text: ${{ env.MY_TEXT}}
           color: magenta
-        
+    env:
+      MY_TEXT: "Hello World!"
