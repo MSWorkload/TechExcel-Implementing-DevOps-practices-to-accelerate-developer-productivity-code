@@ -1,12 +1,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS builder
-WORKDIR /app
+WORKDIR /Application/src/RazorPagesTestSample
 
 # caches restore result by copying csproj file separately
 COPY *.csproj .
 RUN dotnet restore
 
 COPY . .
-RUN dotnet publish --output /app/ --configuration Release --no-restore
+RUN dotnet publish --output /Application/src/RazorPagesTestSample/ --configuration Release --no-restore
 RUN sed -n 's:.*<AssemblyName>\(.*\)</AssemblyName>.*:\1:p' *.csproj > __assemblyname
 RUN if [ ! -s __assemblyname ]; then filename=$(ls *.csproj); echo ${filename%.*} > __assemblyname; fi
 
