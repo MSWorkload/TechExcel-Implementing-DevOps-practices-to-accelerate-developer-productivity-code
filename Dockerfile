@@ -12,10 +12,10 @@ RUN if [ ! -s __assemblyname ]; then filename=$(ls *.csproj); echo ${filename%.*
 
 # Stage 2
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
-WORKDIR /app
-COPY --from=builder /app .
+WORKDIR /Application/src/RazorPagesTestSample
+COPY --from=builder /Application/src/RazorPagesTestSample .
 
 ENV PORT 5000
 EXPOSE 5000
 
-ENTRYPOINT dotnet $(cat /app/__assemblyname).dll --urls "http://*:5000"
+ENTRYPOINT dotnet $(cat /Application/src/RazorPagesTestSample/__assemblyname).dll --urls "http://*:5000"
