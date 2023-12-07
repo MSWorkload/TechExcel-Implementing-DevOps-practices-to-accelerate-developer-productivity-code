@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy
+  labels:
+    app: deploy
+  namespace: namespace-workflow-1701958946069
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy
+  template:
+    metadata:
+      labels:
+        app: deploy
+    spec:
+      containers:
+        - name: deploy
+          image: smallshop.azurecr.io/techexcel-net-devops:latest
+          ports:
+            - containerPort: 5000
